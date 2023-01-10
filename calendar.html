@@ -1,0 +1,2394 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+
+@font-face{
+    font-family: 'Omnes';
+    src: url(font/Omnes%20SemiCond%20Regular.ttf) ;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+@font-face{
+    font-family: 'Omnes';
+    src: url(font/Omnes%20SemiCond%20Black.ttf);
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: 'Omnes';
+    src: url(font/Omnes%20SemiCond%20Bold.ttf);
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Omnes';
+    src: url(font/Omnes%20SemiCond%20SemiBold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}      
+
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+          font-size: 14px;
+          background-image: linear-gradient(#edebff, #edfaff);
+          background-size:cover;
+          font-family: 'Omnes';
+        }
+
+        h1{
+          padding-top: 32px;
+        }
+
+        .container{
+          padding: 0 24px 16px 24px;
+        }
+      
+        #calendar {
+          max-width: 1100px;
+          margin: 0 auto;
+          background: #A7AAF4;
+          border-radius: 16px;
+          
+        }
+        
+        #calendarmob {
+          display: none;
+          background: #A7AAF4;
+          border-radius: 16px;
+        }
+
+        .fc-list-event-time{
+          display: none;
+        }
+
+        .fc-toolbar-title{
+          font-size: 1.3em !important;
+        }
+
+        .fc-event-main{
+            white-space: normal;
+        }
+
+        .fc-view-harness{
+            background: white;
+        }
+
+        .fc-header-toolbar{
+          padding-top: 16px;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .pata{
+          margin-top: 40px;
+          background-image: url(img/footer.png);
+          background-repeat: repeat-x;
+          background-size: contain;
+          height: 150px;
+        }
+
+        @media only screen and (max-width: 768px) {
+          #calendar {
+          display: none;
+          
+        }
+          #calendarmob {
+            display: block;
+        }
+
+        }
+      
+      </style>
+
+    <script src='fullcalendar/dist/index.global.js'></script>
+    <!--Calendar desktop-->
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          fixedWeekCount: false,
+          showNonCurrentDates: false,
+          //initialView: 'listWeek'
+          locale: 'es',
+          events: [ 
+        /*Enero*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-01-03',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-01-03',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-04',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-01-06',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-01-09',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-01-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-01-11',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-11',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-01-12',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-01-12',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-18',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-25',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-01-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*Febrero*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-02-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-02-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-01',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-02-03',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-02-06',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-02-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-02-08',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-08',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-02-09',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-02-09',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-15',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-22',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-02-28',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*marzo*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-03-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-03-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-01',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-03-03',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-03-06',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-03-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-03-08',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-08',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-03-09',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-03-09',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-15',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-22',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-29',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-03-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*abril*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-04-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-04-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-05',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-04-05',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-04-10',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-04-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-04-12',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-12',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-04-13',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-04-13',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-19',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-26',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-04-28',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*mayo*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-05-03',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-05-03',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-03',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-05-05',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-05-08',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-05-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-05-10',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-10',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-05-11',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-05-11',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-17',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-24',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-31',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-05-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*junio*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-06-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-06-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-07',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-06-08',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-06-09',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-06-09',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-06-14',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-14',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-06-15',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-06-15',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-21',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-28',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-06-30',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*julio*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-07-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-07-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-05',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-07-07',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-07-10',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-07-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-07-12',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-12',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-07-13',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-07-13',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Acumulado Millonario',
+          start: '2023-07-14',
+          color: '#0F113E',
+          textColor: '#FDC224',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-19',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-26',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-07-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*agosto*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-08-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-08-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-02',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-08-04',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-08-07',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-08-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-08-09',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-09',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-08-10',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-08-10',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-16',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-23',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-30',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-08-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*septiemnbre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-09-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-09-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-06',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-09-08',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-09-11',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-09-11',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-09-13',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-13',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-09-14',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-09-14',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-20',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-27',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-09-29',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*octubre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-10-03',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-10-03',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-04',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-10-06',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-10-09',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-10-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-10-11',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-11',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-10-12',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-10-12',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-18',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-25',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-10-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*noviembre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-11-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-11-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-01',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-11-03',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-11-06',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-11-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-11-08',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-08',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-11-09',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-11-09',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-15',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-22',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-29',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-11-30',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*diciembre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-12-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-12-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-06',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-12-07',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-12-11',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-12-11',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-11-13',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-13',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-12-14',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-12-14',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-20',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+
+        {
+          title: 'Pago Acumulado Millonario',
+          start: '2023-12-22',
+          color: '#0F113E',
+          textColor: '#FDC224',
+        },
+
+
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-27',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-12-29',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*{
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2020-09-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2020-09-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2020-09-11',
+          end: '2020-09-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-09-12T10:30:00',
+          end: '2020-09-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2020-09-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2020-09-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2020-09-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2020-09-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2020-09-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2020-09-28'
+        }*/
+      ]
+        });
+        calendar.render();
+        
+      });
+
+    </script>
+
+
+    <!--Calendar mobile-->
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendarmob');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          height: 'auto',
+          initialView: 'listMonth',
+          locale: 'es',
+          events: [ 
+        /*Enero*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-01-03',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-01-03',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-04',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-01-06',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-01-09',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-01-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-01-11',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-11',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-01-12',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-01-12',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-18',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-01-25',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-01-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*Febrero*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-02-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-02-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-01',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-02-03',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-02-06',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-02-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-02-08',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-08',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-02-09',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-02-09',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-15',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-02-22',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-02-28',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*marzo*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-03-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-03-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-01',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-03-03',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-03-06',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-03-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-03-08',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-08',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-03-09',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-03-09',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-15',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-22',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-03-29',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-03-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*abril*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-04-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-04-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-05',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-04-05',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-04-10',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-04-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-04-12',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-12',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-04-13',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-04-13',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-19',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-04-26',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-04-28',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*mayo*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-05-03',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-05-03',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-03',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-05-05',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-05-08',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-05-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-05-10',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-10',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-05-11',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-05-11',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-17',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-24',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-05-31',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-05-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*junio*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-06-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-06-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-07',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-06-08',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-06-09',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-06-09',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-06-14',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-14',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-06-15',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-06-15',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-21',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-06-28',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-06-30',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+        /*julio*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-07-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-07-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-05',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-07-07',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-07-10',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-07-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-07-12',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-12',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-07-13',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-07-13',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Acumulado Millonario',
+          start: '2023-07-14',
+          color: '#0F113E',
+          textColor: '#FDC224',
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-19',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-07-26',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-07-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*agosto*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-08-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-08-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-02',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-08-04',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-08-07',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-08-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-08-09',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-09',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-08-10',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-08-10',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-16',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-23',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-08-30',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-08-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*septiemnbre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-09-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-09-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-06',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-09-08',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-09-11',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-09-11',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-09-13',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-13',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-09-14',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-09-14',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-20',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-09-27',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-09-29',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*octubre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-10-03',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-10-03',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-04',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-10-06',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-10-09',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-10-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-10-11',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-11',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-10-12',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-10-12',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-18',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-10-25',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-10-31',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*noviembre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-11-02',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-11-02',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-01',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-11-03',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-11-06',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-11-10',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-11-08',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-08',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-11-09',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-11-09',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-15',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-22',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-11-29',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-11-30',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+
+        /*diciembre*/
+        {
+          title: 'Envío Documento Equivalente (mes vencido)',
+          start: '2023-12-04',
+          display: 'block',
+          color: '#F7A941',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Envío Reporte Comisiones Outsourcing',
+          start: '2023-12-04',
+          color: '#C752C5',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-06',
+          textColor: 'black',
+          color: '#E2E3FF'
+          
+        },
+        {
+          title: 'Plazo Radicación Facturas Outsourcing',
+          start: '2023-12-07',
+          color: '#D0A9D0',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Plazo máximo documento equivalente',
+          start: '2023-12-11',
+          color: '#F7B1F6',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisión Seguros (People Pass)',
+          start: '2023-12-11',
+          color: '#81DAFF',
+          textColor: 'black',
+        },
+        {
+          title: 'Pago Comisiones Mensuales - Escalas Asesores Freelance (mes vencido)',
+          start: '2023-11-13',
+          color: '#C2DDB0',
+          textColor: 'black'
+        },
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-13',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        {
+          title: 'Pago Comisiones Mensuales Vantage',
+          start: '2023-12-14',
+          color: '#AEED6D',
+          textColor: 'black'
+          
+        },
+        {
+          title: 'Pago Comisiones Mensuales Outsourcing (mes vencido)',
+          start: '2023-12-14',
+          color: '#FFE596',
+          textColor: 'black',
+        },
+        
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-20',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+
+        {
+          title: 'Pago Acumulado Millonario',
+          start: '2023-12-22',
+          color: '#0F113E',
+          textColor: '#FDC224',
+        },
+
+
+        {
+          title: 'Pago Comisiones Semanales Asesores Freelance (semana vencida)',
+          start: '2023-12-27',
+          textColor: 'black',
+          color: '#E2E3FF'
+        },
+        
+        {
+          title: 'Plazo máximo de cargue Soporte de Seguridad Social y Certificado Retención en la Fuente',
+          start: '2023-12-29',
+          color: '#C9EFFF',
+          textColor: 'black'
+        },
+
+      ]
+        });
+        calendar.render();
+        
+      });
+
+    </script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 style="max-width: 1100px;text-align: center;margin: auto;padding-bottom: 24px;">Cronograma comercial Freelance</h1>
+      <div id='calendar'></div>
+
+      <div id='calendarmob'></div>
+    
+    </div>
+    <div style="text-align: center; padding-top: 20px;">
+      <img src="img/logos.svg" alt="" width="200px">
+    </div>
+
+    <div class="pata">
+      
+    </div>
+  </body>
+</html>
